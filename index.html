@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicole Potgieter — Motion Graphics &amp; Graphic Designer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== TOP BANNER ===== -->
+<header class="hero" id="top">
+  <video class="bg" id="bgv" autoplay muted loop playsinline aria-hidden="true">
+    <source src="videos/reel-loop.mp4" type="video/mp4">
+  </video>
+  <div class="shade"></div>
+
+  <nav class="wrap">
+    <a href="#top">N. Potgieter</a>
+    <div><a href="#work">My work</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <div class="wrap hero-text">
+    <p class="role">Motion Graphics &amp; Graphic Designer</p>
+    <h1>Nicole <b>Potgieter</b></h1>
+    <!-- Check this is the right video ID for your full showreel -->
+    <button class="btn" type="button" data-video="y2fcf1N5UcU">▶ Watch full showreel</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== WORK GRID (video only for now) ===== -->
+  <section id="work">
+    <h2>Selected Work</h2>
+
+    <div class="grid">
+  <!--
+    HOW TO EDIT A CARD
+    - the iframe src ends in /embed/VIDEO_ID — swap in your video's ID
+    - h3 and p = title and short description
+    To add a project: copy a whole card block below and paste it under this one.
+  -->
+
+  <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/tzElKRwIivs" title="Safeguard Marketing Demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>Safeguard Marketing Demo</h3>
+      <p>Marketing demo for Powerfleet's Safeguard product, turning a supplied script into a visual story with stock footage, AI voiceover and motion graphics.</p>
+      <p><strong>Role:</strong> Creative Execution · Motion Design · Video Editing · Compositing</p>
+    </div>
+  </div>
+
+  <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/rGMcW7On_HI" title="AfMA Road Safety Teaser" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>AfMA Road Safety Teaser</h3>
+      <p>A serious teaser for Powerfleet's AfMA event booth, highlighting five dangerous driving behaviours. Designed for continuous playback on a display.</p>
+      <p><strong>Role:</strong> Motion Design · Video Editing</p>
+    </div>
+  </div>
+
+  <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/lZkaIKeRqYs" title="Driver Introduction Video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>Driver Introduction Video</h3>
+      <p>A friendly 2D animated explainer introducing drivers to Powerfleet's telematics and easing privacy concerns, showing it's about safety and support, not surveillance.</p>
+      <p><strong>Role:</strong> Motion Design · Video Editing · Visual Storytelling</p>
+    </div>
+  </div>
+
+  <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/VypfpkTjM04" title="Reykjavík Marathon hype video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>Reykjavík Marathon hype video</h3>
+      <p>A fictional promotional hype video for a conceptual Reykjavík marathon, built to drive excitement and sign-ups through energetic editing, cinematic visuals and motion design.</p>
+      <p><strong>Role:</strong> Concept Development · Motion Design · Video Editing · Creative Direction</p>
+    </div>
+  </div>
+
+  <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/DshuTSsHz3Y" title="MiX Telematics Solutions" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>MiX Telematics Solutions</h3>
+      <p>A text-driven motion design video created for MiX Telematics Solutions, using animation, typography and visual pacing to communicate the product and its key messaging.</p>
+      <p><strong>Role:</strong> Motion Design · Video Editing · Kinetic Typography · Visual Storytelling</p>
+    </div>
+  </div>
+
+</div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Let's Work Together</h2>
+    <a class="mail" href="mailto:nicole.potgieter101@gmail.com">nicole.potgieter101@gmail.com</a>
+    <p>Cape Town, South Africa</p>
+  </section>
+
+  <footer>© 2026 Nicole Potgieter</footer>
+</main>
+
+<!-- ===== VIDEO POPUP ===== -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close video">✕</button>
+    <div id="lightboxPlayer"></div>
+  </div>
+</div>
+
+<script>
+  /* Pause the banner video for visitors who prefer reduced motion */
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var v = document.getElementById("bgv"); v.removeAttribute("autoplay"); v.pause();
+  }
+
+  /* Click-to-play on grid video cards */
+  document.querySelectorAll(".thumb[data-yt]").forEach(function (t) {
+    t.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube.com/embed/" + t.dataset.yt + "?autoplay=1&rel=0";
+      f.title = "Video player";
+      f.allow = "autoplay; fullscreen; picture-in-picture";
+      f.allowFullscreen = true;
+      t.innerHTML = "";
+      t.appendChild(f);
+    });
+  });
+
+  /* Banner "Watch full showreel" popup */
+  var lightbox = document.getElementById("lightbox");
+  var player = document.getElementById("lightboxPlayer");
+  document.querySelectorAll("[data-video]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.dataset.video;
+      player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      lightbox.classList.add("open");
+    });
+  });
+  document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+  function closeLightbox() { lightbox.classList.remove("open"); player.innerHTML = ""; }
+</script>
+</body>
+</html>
