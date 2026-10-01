@@ -34,7 +34,14 @@
 
   <!-- ===== WORK GRID (video only for now) ===== -->
   <section id="work">
-    <h2>Selected Work</h2>
+   <h2>Selected Work</h2>
+
+<div class="filters">
+  <button class="on" data-f="all">All</button>
+  <button data-f="video">Videos</button>
+  <button data-f="web">Web design</button>
+</div>
+
 
     <div class="grid">
   <!--
@@ -49,7 +56,7 @@
       <iframe src="https://www.youtube.com/embed/tzElKRwIivs" title="Safeguard Marketing Demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="meta">
-      <h3>Safeguard marketing demo</h3>
+      <h3>Safeguard Marketing Demo</h3>
       <p>Marketing demo for Powerfleet's Safeguard product, turning a supplied script into a visual story with stock footage, AI voiceover and motion graphics.</p>
       <p><strong>Role:</strong> Creative Execution · Motion Design · Video Editing · Compositing</p>
     </div>
@@ -60,7 +67,7 @@
       <iframe src="https://www.youtube.com/embed/rGMcW7On_HI" title="AfMA Road Safety Teaser" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="meta">
-      <h3>AfMA road safety teaser</h3>
+      <h3>AfMA Road Safety Teaser</h3>
       <p>A serious teaser for Powerfleet's AfMA event booth, highlighting five dangerous driving behaviours. Designed for continuous playback on a display.</p>
       <p><strong>Role:</strong> Motion Design · Video Editing</p>
     </div>
@@ -71,9 +78,19 @@
       <iframe src="https://www.youtube.com/embed/lZkaIKeRqYs" title="Driver Introduction Video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="meta">
-      <h3>Driver introduction</h3>
-      <p>A friendly 2D animated explainer introducing drivers to Powerfleet's telematics and easing privacy concerns, showing it's about safety and support, not surveillance.</p>
+      <h3>Driver Introduction Video</h3>
+      <p>A friendly 2D animated explainer introducing drivers to Powerfleet's telematics and easing privacy concerns.</p>
       <p><strong>Role:</strong> Motion Design · Video Editing · Visual Storytelling</p>
+    </div>
+  </div>
+    <div class="item" data-t="video">
+    <div class="embed">
+      <iframe src="https://www.youtube.com/embed/DshuTSsHz3Y" title="MiX Telematics Solutions" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="meta">
+      <h3>MiX Telematics Solutions</h3>
+      <p>A text-driven motion design video created for MiX Telematics Solutions, communicating the product and its key messaging.</p>
+      <p><strong>Role:</strong> Motion Design · Video Editing · Kinetic Typography · Visual Storytelling</p>
     </div>
   </div>
 
@@ -82,24 +99,33 @@
       <iframe src="https://www.youtube.com/embed/VypfpkTjM04" title="Reykjavík Marathon hype video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="meta">
-      <h3>Reykjavík marathon hype</h3>
-      <p>A fictional promotional hype video for a conceptual Reykjavík marathon, built to drive excitement and sign-ups through energetic editing, cinematic visuals and motion design.</p>
-      <p><strong>Role:</strong> Concept Development · Motion Design · Video Editing · Creative Direction</p>
+      <h3>Reykjavík Marathon Hype Video</h3>
+      <p>A fictional promotional hype video for a conceptual Reykjavík marathon, built to drive excitement and sign-ups.</p>
+      <p><strong>Role:</strong> Concept Development · Motion Design · Video Editing · Brand Identity</p>
     </div>
   </div>
 
-  <div class="item" data-t="video">
-    <div class="embed">
-      <iframe src="https://www.youtube.com/embed/DshuTSsHz3Y" title="MiX Telematics Solutions" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="meta">
-      <h3>MiX Telematics solutions</h3>
-      <p>A text-driven motion design video created for MiX Telematics Solutions, using animation, typography and visual pacing to communicate the product and its key messaging.</p>
-      <p><strong>Role:</strong> Motion Design · Video Editing · Kinetic Typography · Visual Storytelling</p>
-    </div>
+<div class="item" data-t="web">
+  <div class="thumb" style="background-image:url(images/web-design-1.png); cursor:pointer" data-image="images/web-design-1.png"><span class="tag">Web</span></div>
+  <div class="meta">
+    <h3>Landing Page &amp; Brand Identity</h3>
+    <p>Concept website and brand identity for a fictional Reykjavík marathon, covering the logo, colour palette and typography. Made alongside the concept video.</p>
+    <p><strong>Role:</strong> Brand Identity · Logo Design · Web Design </p>
   </div>
-
 </div>
+
+<div class="item" data-t="web">
+  <div class="thumb" style="background-image:url(images/web-design-2.png); cursor:pointer" data-image="images/web-design-2.png"><span class="tag">Web</span></div>
+  <div class="meta">
+    <h3>Landing Page Redesign</h3>
+    <p>Concept redesign of a simple landing page for Auto-Ross Bodyworks, a Cape Town panel beater shop. Not a live site.</p>
+    <p><strong>Role:</strong> Web Design </p>
+  </div>
+</div>
+
+</a>
+</div>
+
   </section>
 
   <!-- ===== CONTACT ===== -->
@@ -139,19 +165,42 @@
     });
   });
 
-  /* Banner "Watch full showreel" popup */
+  /* Lightbox popup (used for showreel video and website images) */
   var lightbox = document.getElementById("lightbox");
   var player = document.getElementById("lightboxPlayer");
+
   document.querySelectorAll("[data-video]").forEach(function (btn) {
     btn.addEventListener("click", function () {
+      document.querySelector(".lightbox-inner").classList.remove("img-mode");
       var id = btn.dataset.video;
       player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
       lightbox.classList.add("open");
     });
   });
+
+  document.querySelectorAll("[data-image]").forEach(function (t) {
+    t.addEventListener("click", function () {
+      document.querySelector(".lightbox-inner").classList.add("img-mode");
+      player.innerHTML = '<img src="' + t.dataset.image + '" alt="">';
+      lightbox.classList.add("open");
+    });
+  });
+
   document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
   lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
   function closeLightbox() { lightbox.classList.remove("open"); player.innerHTML = ""; }
+
+  /* Filter buttons */
+  document.querySelectorAll(".filters button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".filters button").forEach(function (x) { x.classList.remove("on"); });
+      b.classList.add("on");
+      var f = b.dataset.f;
+      document.querySelectorAll(".item").forEach(function (i) {
+        i.classList.toggle("hide", f !== "all" && i.dataset.t !== f);
+      });
+    });
+  });
 </script>
 </body>
 </html>
