@@ -56,130 +56,73 @@ section { padding: 70px 0 0; }
 nav { display: flex; justify-content: space-between; padding-top: 45px; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; }
 nav a { color: #fff; text-decoration: none; margin-left: 22px; }
 nav a:first-child { margin: 0; font-weight: 600; }
+nav a[href="#work"] { background: var(--green); color: var(--teal); padding: 6px 16px; border-radius: 99px; font-weight: 600; }
 .hero-text { padding-bottom: 110px; }
-.role { letter-spacing: .14em; font-size: 16px; margin: 0 0 14px; }
 .role { letter-spacing: .14em; font-size: 16px; margin: 0 0 14px; padding-left: 0.5vw; }
 .hero h1 { margin: 0 0 26px; font-weight: 300; font-size: clamp(36px, 6vw, 80px); line-height: 1; letter-spacing: .1em; text-transform: uppercase; }
 .hero h1 b { display: block; font-weight: 600; letter-spacing: .12em; }
-.btn { display: inline-block; background: var(--green); color: var(--teal); padding: 13px 28px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: .06em; }
+
+/* Showreel button (it's a <button>, so it needs these to match the site font) */
+.btn {
+  display: inline-block; background: var(--green); color: var(--teal);
+  padding: 13px 28px; border-radius: 99px; font-weight: 600; font-size: 14px; letter-spacing: .06em;
+  font-family: inherit; cursor: pointer;
+}
+.hero .btn { background: transparent; color: #fff; border: 2px solid var(--green); }
+
+main.wrap { max-width: none; padding-left: 5vw; padding-right: 5vw; }
 
 /* ===== WORK GRID ===== */
-.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
-.filters button { background: none; color: var(--heading); border: 1px solid var(--line); border-radius: 99px; padding: 8px 18px; font: inherit; font-size: 13px; cursor: pointer; letter-spacing: .06em; }
-.filters button.on { background: var(--teal); color: #fff; border-color: var(--teal); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;}
-.item { background: var(--card); border-radius: 12px; overflow: hidden; text-decoration: none; display: block; }
-.item.hide { display: none; }
-.thumb {
-  aspect-ratio: 16/10; position: relative; display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, var(--teal), #2f9e6a) center/cover;
-}
-.thumb.alt { background: linear-gradient(135deg, var(--green), #0d3b45) center/cover; }
-.tag { position: absolute; top: 12px; left: 12px; background: var(--green); color: var(--teal); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; letter-spacing: .08em; text-transform: uppercase; }
-.play { width: 54px; height: 54px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; transition: transform .2s; }
-.item:hover .play { transform: scale(1.15); }
-.play:after { content: ""; border-left: 15px solid var(--teal); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.item { background: var(--card); border-radius: 12px; overflow: hidden; }
+.embed { aspect-ratio: 16/10; }
+.embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 .meta { padding: 14px 18px; }
 .meta h3 { margin: 0 0 8px; font-size: 15px; font-weight: 600; color: var(--heading); }
 .meta p { margin: 0; font-size: 13px; }
+.meta p + p { margin-top: 12px; }
 
 /* ===== CONTACT ===== */
 .mail { color: var(--heading); font-size: clamp(20px, 4vw, 34px); text-decoration: none; font-weight: 400; border-bottom: 3px solid var(--green); }
 footer { padding: 70px 0 40px; font-size: 12px; }
 
-@media (max-width: 720px) { .hero:before { right: 5%; } }
 @media (prefers-reduced-motion: reduce) { .hero { animation: none; } }
 
-nav a[href="#work"] { background: var(--green); color: var(--teal); padding: 6px 16px; border-radius: 99px; font-weight: 600; }
-.hero .btn { background: transparent; color: #fff; border: 2px solid var(--green); }
-main.wrap { max-width: none; padding-left: 5vw; padding-right: 5vw; }
-
-.embed { aspect-ratio: 16/10; }
-.embed iframe { width: 100%; height: 100%; border: 0; display: block; }
-.meta p + p { margin-top: 12px; }
-.thumb { background-position: top center; }
-.thumb.zoom { background-size: 115%; }
-.thumb[data-yt] { cursor: pointer; }
-.thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
+/* ===== VIDEO POPUP ===== */
 .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.85);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 50;
-    padding: 20px;
-    overflow: hidden;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+  overflow: hidden;
 }
-
-.lightbox.open {
-    display: flex;
-}
+.lightbox.open { display: flex; }
 
 .lightbox-inner {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    aspect-ratio: 16 / 9;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
 }
-
 .lightbox-inner iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-
 .lightbox-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 1;
-}
-
-/* Scrollable image lightbox */
-.lightbox-inner.img-mode {
-    width: min(1400px, 96vw);
-    height: 94vh;
-    max-height: 94vh;
-    aspect-ratio: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-    background: #fff;
-}
-
-.lightbox-inner.img-mode img {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.lightbox-inner.img-mode {
-    position: relative;
-    width: min(1400px, 96vw);
-    height: 94vh;
-    max-height: 94vh;
-    aspect-ratio: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-    background: #fff;
-    padding-right: 1px;
-}
-
-.lightbox-inner.img-mode img {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
 }
